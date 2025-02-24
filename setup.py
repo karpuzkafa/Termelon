@@ -17,14 +17,20 @@ from setuptools import setup, find_packages
 
 setup(
     name="termelon",
-    version="1.8.0",
+    version="1.9.2",
     description="Terminal game creator tools",
-    author="melonly_melon",
-    license="Termelon Library License",
-    packages=find_packages(),
-    install_requires=[],
+    author="Hasan Agit Ünal",
+    license="Apache-2.0",
+    packages=find_packages(include=["termelon", "termelon.*"]),
+    entry_points={
+        "console_scripts": [
+            "tgit=termelon.tgit:main",
+        ],
+    },
+    install_requires=["dulwich"],
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: Other/Proprietary License",
+        "License :: OSI Approved :: Apache Software License",
+        "Operating System :: OS Independent",
     ],
 )
